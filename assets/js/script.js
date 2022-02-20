@@ -64,7 +64,6 @@ function getNotes() {
 
     getArrFromLocalStorage()
 
-
     for( let i = 0; i < storedArray.length; i++){
 
         const newCard = generateCard(storedArray[i][0],storedArray[i][1], storedArray[i][2] )
