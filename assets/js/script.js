@@ -1,42 +1,73 @@
-let list = document.querySelector('ul');
-let todos;
-function toLocal() {
-    todos = list.innerHTML;
-    localStorage.setItem('todos', todos);
+let storedArray = []
+
+document.getElementById('notes__form').onsubmit = (e) =>{
+
+    e.preventDefault()
+
+    const noteName = document.getElementById('noteName').value
+    const noteText = document.getElementById('noteText').value
+
+    if(noteName && noteText){
+        const newCard = generateCard(noteName, noteText)
+        document.querySelector('#notes').appendChild(newCard)
+
+        addElementToLocalStorage(noteName, noteText)
+
+        document.getElementById('notes__form').reset()
+    }
 }
 
-list.addEventListener('click', function (ev) {
-    if (ev.target.tagName === "LI") {
-        ev.target.classList.toggle('checked');
-    } else if (ev.target.tagName === "SPAN") {
-        let div = ev.target.parentNode;
-        div.remove();
-        toLocal();
+const generateCard = (noteName, noteText) =>{
+
+    let card = document.createElement('div')
+    card.classList.add("card");
+
+    let card__main = document.createElement('div')
+    card.classList.add("card__main")
+
+    let h3 = document.createElement('h3')
+    h3.innerText = noteName
+
+    let noteContent = document.createElement('p')
+    noteContent.innerText = noteText
+
+    card__main.appendChild(h3)
+    card__main.appendChild(noteContent)
+
+    card.appendChild(card__main)
+
+    return card
+}
+
+getArrFromLocalStorage = () =>{
+    let collection = JSON.parse(localStorage.getItem("notesCollection"))
+    if(collection){
+        storedArray = collection
     }
-}, false);
+}
+
+setArrToLocalStorage = () =>{
+    localStorage.setItem("notesCollection", JSON.stringify(storedArray));
+}
+
+addElementToLocalStorage = (noteName, noteText) => {
+    storedArray.push([noteName, noteText])
+    setArrToLocalStorage()
+}
 
 
-const newdo = document.querySelector('#btn');
+document.addEventListener("DOMContentLoaded",function(){
+    getNotes()
+})
 
-newdo.addEventListener("click", () => {
-    let li = document.createElement('li');
-    let inputValue = document.getElementById('toDoEl').value;
-    let t = document.createTextNode(inputValue);
-    li.appendChild(t);
-    if (inputValue == "") {
-        alert("Введите дело");
-    } else {
-        document.getElementById('list').appendChild(li);
+function getNotes() {
+
+    getArrFromLocalStorage()
+
+
+    for( let i = 0; i < storedArray.length; i++){
+
+        const newCard = generateCard(storedArray[i][0],storedArray[i][1], storedArray[i][2] )
+        document.querySelector('#notes').appendChild(newCard)
     }
-    document.getElementById('toDoEl').value = "";
-    let span = document.createElement('SPAN');
-    let txt = document.createTextNode("Удалить");
-    span.className = "close";
-    span.appendChild(txt);
-    li.appendChild(span);
-    toLocal();
-});
-
-if (localStorage.getItem('todos')) {
-    list.innerHTML = localStorage.getItem('todos');
 }
