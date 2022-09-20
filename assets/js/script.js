@@ -16,34 +16,34 @@ document.getElementById("notes__form").onsubmit = (e) => {
 };
 
 const generateCard = (noteText) => {
-  let card = document.createElement("div");
+  let card = document.createElement("li");
   card.classList.add("card");
-
-  let card__main = document.createElement("div");
-  card.classList.add("card__main");
 
   let noteContent = document.createElement("p");
   noteContent.innerText = noteText;
 
-  card__main.appendChild(noteContent);
+  let delButton = document.createElement("button");
+  delButton.innerText = "delete";
+  delButton.classList.add("delete");
 
-  card.appendChild(card__main);
+  card.appendChild(noteContent);
+  card.appendChild(delButton);
 
   return card;
 };
 
-getArrFromLocalStorage = () => {
+const getArrFromLocalStorage = () => {
   let collection = JSON.parse(localStorage.getItem("notesCollection"));
   if (collection) {
     storedArray = collection;
   }
 };
 
-setArrToLocalStorage = () => {
+const setArrToLocalStorage = () => {
   localStorage.setItem("notesCollection", JSON.stringify(storedArray));
 };
 
-addElementToLocalStorage = (noteText) => {
+const addElementToLocalStorage = (noteText) => {
   storedArray.push([noteText]);
   setArrToLocalStorage();
 };
@@ -64,3 +64,22 @@ function getNotes() {
     document.querySelector("#notes").appendChild(newCard);
   }
 }
+
+document.querySelector("#notes").addEventListener(
+  "click",
+  function (ev) {
+    if (ev.target.className === "delete") {
+      let li = ev.target.closest("li"); // get reference by using closest
+      let nodes = Array.from(li.closest("ul").children); // get array
+      let indexx = nodes.indexOf(li);
+
+      var notes = JSON.parse(localStorage.getItem("notesCollection"));
+      let newNotes = notes.filter((value, index) => index !== indexx);
+      localStorage.setItem("notesCollection", JSON.stringify(newNotes));
+
+      let div = ev.target.parentNode;
+      div.remove();
+    }
+  },
+  false
+);
