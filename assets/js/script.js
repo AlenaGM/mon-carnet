@@ -1,20 +1,19 @@
 let storedArray = [];
 
-document.getElementById("notes__form").onsubmit = (e) => {
-  e.preventDefault();
+document.addEventListener("DOMContentLoaded", function () {
+  getNotes();
+});
 
-  const noteText = document.getElementById("noteText").value;
+function getNotes() {
+  getArrFromLocalStorage();
 
-  if (noteText) {
-    const newCard = generateCard(noteText);
+  for (let i = 0; i < storedArray.length; i++) {
+    const newCard = generateCard(storedArray[i][0]);
     document.querySelector("#notes").appendChild(newCard);
-
-    addElementToLocalStorage(noteText);
-
-    document.getElementById("notes__form").reset();
   }
-};
+}
 
+//generate card
 const generateCard = (noteText) => {
   let card = document.createElement("li");
   card.classList.add("card");
@@ -32,6 +31,23 @@ const generateCard = (noteText) => {
   return card;
 };
 
+//add note
+document.getElementById("notes__form").onsubmit = (e) => {
+  e.preventDefault();
+
+  const noteText = document.getElementById("noteText").value;
+
+  if (noteText) {
+    const newCard = generateCard(noteText);
+    document.querySelector("#notes").appendChild(newCard);
+
+    addElementToLocalStorage(noteText);
+
+    document.getElementById("notes__form").reset();
+  }
+};
+
+//work with LocalStorage
 const getArrFromLocalStorage = () => {
   let collection = JSON.parse(localStorage.getItem("notesCollection"));
   if (collection) {
@@ -49,33 +65,17 @@ const addElementToLocalStorage = (noteText) => {
   setArrToLocalStorage();
 };
 
-document.addEventListener("DOMContentLoaded", function () {
-  getNotes();
-});
-
-function getNotes() {
-  getArrFromLocalStorage();
-
-  for (let i = 0; i < storedArray.length; i++) {
-    const newCard = generateCard(
-      storedArray[i][0],
-      storedArray[i][1],
-      storedArray[i][2]
-    );
-    document.querySelector("#notes").appendChild(newCard);
-  }
-}
-
+//delete note
 document.querySelector("#notes").addEventListener(
   "click",
   function (ev) {
     if (ev.target.className === "deleteBtn") {
       let li = ev.target.closest("li"); // get reference by using closest
       let nodes = Array.from(li.closest("ul").children); // get array
-      let indexx = nodes.indexOf(li);
+      let delIndex = nodes.indexOf(li); //get deleted index
 
       var notes = JSON.parse(localStorage.getItem("notesCollection"));
-      let newNotes = notes.filter((value, index) => index !== indexx);
+      let newNotes = notes.filter((value, index) => index !== delIndex);
       localStorage.setItem("notesCollection", JSON.stringify(newNotes));
 
       let div = ev.target.parentNode;

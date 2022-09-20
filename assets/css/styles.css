@@ -26,10 +26,6 @@ body {
   align-items: flex-end;
 }
 
-.card h3 {
-  font-size: 15px;
-}
-
 .card p {
   font-size: 13px;
   color: #65676b;
