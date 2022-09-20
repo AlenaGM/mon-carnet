@@ -45,6 +45,7 @@ const setArrToLocalStorage = () => {
 
 const addElementToLocalStorage = (noteText) => {
   storedArray.push([noteText]);
+  console.log(storedArray);
   setArrToLocalStorage();
 };
 
@@ -79,6 +80,8 @@ document.querySelector("#notes").addEventListener(
 
       let div = ev.target.parentNode;
       div.remove();
+
+      getArrFromLocalStorage();
     }
   },
   false
