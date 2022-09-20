@@ -1,3 +1,9 @@
+body {
+  background: url("../img/abstractbg.jpg");
+  font-family: "Montserrat", sans-serif;
+  font-size: 28px;
+}
+
 .container {
   max-width: 400px;
   margin: 0 auto;
@@ -27,12 +33,6 @@
 .card p {
   font-size: 13px;
   color: #65676b;
-}
-
-body {
-  background: url("../img/abstractbg.jpg");
-  font-family: "Montserrat", sans-serif;
-  font-size: 28px;
 }
 
 .textarea {
