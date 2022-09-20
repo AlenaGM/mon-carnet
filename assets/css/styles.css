@@ -1,47 +1,51 @@
-.container{
-    max-width: 400px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    padding: 20px 0;
-    gap: 10px;
+body {
+  background: url("../img/flowersbg.jpg");
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  gap: 10px;
 }
 
 .card {
-    position: relative;
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-    padding: 8px;
-    border-radius: 7px;
-    box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.05);
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 7px;
+  box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.05);
 }
 
 .card h3 {
-    font-size: 15px;
+  font-size: 15px;
 }
 
 .card p {
-    font-size: 13px;
-    color: #65676b;
+  font-size: 13px;
+  color: #65676b;
 }
 
 .card__seen {
-    position: absolute;
-    right: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
 }
 
-body{
-    background: #f5f5f5
+body {
+  background: #f5f5f5;
 }
 
 textarea {
-    width: 200px;
-    min-height: 100px;
-    resize: vertical;
+  width: 200px;
+  min-height: 100px;
+  resize: vertical;
 }

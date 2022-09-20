@@ -1,38 +1,42 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--Сюда шрифты =swap&subset=cyrillic-ext-->
-        <link rel="stylesheet" href="assets/css/normalize.css">
-        <link rel="stylesheet" href="assets/css/styles.css">
-        <link rel="shortcut icon" href="assets/img/notes.png" type="img/png">
-        <title>Мои заметки</title>
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Сюда шрифты =swap&subset=cyrillic-ext-->
+    <link rel="stylesheet" href="assets/css/normalize.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="shortcut icon" href="assets/img/notes.png" type="img/png" />
+    <title>Mon Carnet de Notes</title>
+  </head>
 
-    <body>
-        <div class="wrapper">
-            <form class="container notes__form" id="notes__form">
-                <div class="card">
-                    <div class="card__main">
-                        <div>
-                            <input type="text" id="noteName" placeholder="Название" maxlength="250" required>
-                        </div>
-                        <div>
-                            <textarea id="noteText" required>Текст заметки</textarea>
-                        </div>
-                        <div>
-                            <input type="submit" value="Добавить">
-                        </div>
-
-                    </div>
-                </div>
-            </form>
-            <div class="container notes" id="notes">
+  <body>
+    <div class="wrapper">
+      <form class="container notes__form" id="notes__form">
+        <div class="card">
+          <div class="card__main">
+            <div>
+              <input
+                type="text"
+                id="noteName"
+                placeholder="Title"
+                maxlength="250"
+                required
+              />
             </div>
+            <div>
+              <textarea id="noteText" required>Text</textarea>
+            </div>
+            <div>
+              <input type="submit" value="Add a note" />
+            </div>
+          </div>
         </div>
+      </form>
+      <div class="container notes" id="notes"></div>
+    </div>
 
-        <script src="assets/js/script.js"></script>
-    </body>
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>
