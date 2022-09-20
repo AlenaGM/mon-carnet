@@ -1,72 +1,66 @@
-let storedArray = []
+let storedArray = [];
 
-document.getElementById('notes__form').onsubmit = (e) =>{
+document.getElementById("notes__form").onsubmit = (e) => {
+  e.preventDefault();
 
-    e.preventDefault()
+  const noteText = document.getElementById("noteText").value;
 
-    const noteName = document.getElementById('noteName').value
-    const noteText = document.getElementById('noteText').value
+  if (noteText) {
+    const newCard = generateCard(noteText);
+    document.querySelector("#notes").appendChild(newCard);
 
-    if(noteName && noteText){
-        const newCard = generateCard(noteName, noteText)
-        document.querySelector('#notes').appendChild(newCard)
+    addElementToLocalStorage(noteText);
 
-        addElementToLocalStorage(noteName, noteText)
+    document.getElementById("notes__form").reset();
+  }
+};
 
-        document.getElementById('notes__form').reset()
-    }
-}
+const generateCard = (noteText) => {
+  let card = document.createElement("div");
+  card.classList.add("card");
 
-const generateCard = (noteName, noteText) =>{
+  let card__main = document.createElement("div");
+  card.classList.add("card__main");
 
-    let card = document.createElement('div')
-    card.classList.add("card");
+  let noteContent = document.createElement("p");
+  noteContent.innerText = noteText;
 
-    let card__main = document.createElement('div')
-    card.classList.add("card__main")
+  card__main.appendChild(noteContent);
 
-    let h3 = document.createElement('h3')
-    h3.innerText = noteName
+  card.appendChild(card__main);
 
-    let noteContent = document.createElement('p')
-    noteContent.innerText = noteText
+  return card;
+};
 
-    card__main.appendChild(h3)
-    card__main.appendChild(noteContent)
+getArrFromLocalStorage = () => {
+  let collection = JSON.parse(localStorage.getItem("notesCollection"));
+  if (collection) {
+    storedArray = collection;
+  }
+};
 
-    card.appendChild(card__main)
+setArrToLocalStorage = () => {
+  localStorage.setItem("notesCollection", JSON.stringify(storedArray));
+};
 
-    return card
-}
+addElementToLocalStorage = (noteText) => {
+  storedArray.push([noteText]);
+  setArrToLocalStorage();
+};
 
-getArrFromLocalStorage = () =>{
-    let collection = JSON.parse(localStorage.getItem("notesCollection"))
-    if(collection){
-        storedArray = collection
-    }
-}
-
-setArrToLocalStorage = () =>{
-    localStorage.setItem("notesCollection", JSON.stringify(storedArray));
-}
-
-addElementToLocalStorage = (noteName, noteText) => {
-    storedArray.push([noteName, noteText])
-    setArrToLocalStorage()
-}
-
-
-document.addEventListener("DOMContentLoaded",function(){
-    getNotes()
-})
+document.addEventListener("DOMContentLoaded", function () {
+  getNotes();
+});
 
 function getNotes() {
+  getArrFromLocalStorage();
 
-    getArrFromLocalStorage()
-
-    for( let i = 0; i < storedArray.length; i++){
-
-        const newCard = generateCard(storedArray[i][0],storedArray[i][1], storedArray[i][2] )
-        document.querySelector('#notes').appendChild(newCard)
-    }
+  for (let i = 0; i < storedArray.length; i++) {
+    const newCard = generateCard(
+      storedArray[i][0],
+      storedArray[i][1],
+      storedArray[i][2]
+    );
+    document.querySelector("#notes").appendChild(newCard);
+  }
 }

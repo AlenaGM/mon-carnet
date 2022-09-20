@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--Сюда шрифты =swap&subset=cyrillic-ext-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Montserrat&display=swap&subset=cyrillic-ext"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="assets/css/normalize.css" />
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="shortcut icon" href="assets/img/notes.png" type="img/png" />
@@ -17,19 +20,14 @@
         <div class="card">
           <div class="card__main">
             <div>
-              <input
-                type="text"
-                id="noteName"
-                placeholder="Title"
-                maxlength="250"
+              <textarea
+                id="noteText"
+                placeholder="New note"
                 required
-              />
+              ></textarea>
             </div>
             <div>
-              <textarea id="noteText" required>Text</textarea>
-            </div>
-            <div>
-              <input type="submit" value="Add a note" />
+              <button type="submit" class="button">Add note</button>
             </div>
           </div>
         </div>

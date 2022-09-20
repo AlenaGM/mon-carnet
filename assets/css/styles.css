@@ -11,10 +11,10 @@
   position: relative;
   display: flex;
   align-items: center;
-  background-color: #fff;
+  background-color: #f4e6ec;
   padding: 8px;
   border-radius: 7px;
-  box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 0 #23262f3b;
 }
 
 .card h3 {
@@ -38,10 +38,33 @@
 
 body {
   background: url("../img/abstractbg.jpg");
+  font-family: "Montserrat", sans-serif;
+  font-size: 28px;
 }
 
 textarea {
   width: 200px;
   min-height: 100px;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
   resize: vertical;
+  background-color: #cbd2dc;
+  box-shadow: 0 2px 0 #23262f3b;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 8px 24px;
+  min-width: 60px;
+  cursor: pointer;
+  transition: background-color 0.5s ease 0s;
+  box-shadow: 0 2px 0 #23262f3b;
+  margin-top: 25px;
+  background-color: #7c8aa4;
 }
