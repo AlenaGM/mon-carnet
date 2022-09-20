@@ -7,14 +7,17 @@
   gap: 10px;
 }
 
-.card {
+.card,
+.textarea {
   position: relative;
   display: flex;
   align-items: center;
   background-color: #f4e6ec;
   padding: 8px;
-  border-radius: 7px;
+  border-radius: 8px;
   box-shadow: 0 2px 0 #23262f3b;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .card h3 {
@@ -26,31 +29,17 @@
   color: #65676b;
 }
 
-.card__seen {
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-}
-
 body {
   background: url("../img/abstractbg.jpg");
   font-family: "Montserrat", sans-serif;
   font-size: 28px;
 }
 
-textarea {
-  width: 200px;
+.textarea {
   min-height: 100px;
-  padding: 8px;
-  border-radius: 8px;
   border: none;
   resize: vertical;
-  background-color: #cbd2dc;
-  box-shadow: 0 2px 0 #23262f3b;
+  background-color: #e8e8e8;
 }
 
 .button {
@@ -63,8 +52,18 @@ textarea {
   padding: 8px 24px;
   min-width: 60px;
   cursor: pointer;
-  transition: background-color 0.5s ease 0s;
   box-shadow: 0 2px 0 #23262f3b;
-  margin-top: 25px;
+  margin: 8px 0px 16px 0px;
   background-color: #7c8aa4;
+}
+
+.deleteBtn {
+  display: inline-flex;
+  border: none;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 4px 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 0 #23262f3b;
+  background-color: #ea8a91;
 }

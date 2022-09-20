@@ -17,20 +17,13 @@
   <body>
     <div class="wrapper">
       <form class="container notes__form" id="notes__form">
-        <div class="card">
-          <div class="card__main">
-            <div>
-              <textarea
-                id="noteText"
-                placeholder="New note"
-                required
-              ></textarea>
-            </div>
-            <div>
-              <button type="submit" class="button">Add note</button>
-            </div>
-          </div>
-        </div>
+        <textarea
+          id="noteText"
+          class="textarea"
+          placeholder="New note"
+          required
+        ></textarea>
+        <button type="submit" class="button">Add note</button>
       </form>
       <ul class="container notes" id="notes"></ul>
     </div>

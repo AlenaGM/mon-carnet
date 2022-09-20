@@ -24,7 +24,7 @@ const generateCard = (noteText) => {
 
   let delButton = document.createElement("button");
   delButton.innerText = "delete";
-  delButton.classList.add("delete");
+  delButton.classList.add("deleteBtn");
 
   card.appendChild(noteContent);
   card.appendChild(delButton);
@@ -68,7 +68,7 @@ function getNotes() {
 document.querySelector("#notes").addEventListener(
   "click",
   function (ev) {
-    if (ev.target.className === "delete") {
+    if (ev.target.className === "deleteBtn") {
       let li = ev.target.closest("li"); // get reference by using closest
       let nodes = Array.from(li.closest("ul").children); // get array
       let indexx = nodes.indexOf(li);
