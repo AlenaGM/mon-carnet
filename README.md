@@ -1,6 +1,6 @@
 # Mon-Carnet-de-Notes 📔
 
-Notes App built with Javascript: validation upon note appending, notes saved in Local Storage.
+Javascript Notes App: validation upon note appending, notes saved in Local Storage.
 <br><br>
 
 ## Result
