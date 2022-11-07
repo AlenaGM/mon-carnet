@@ -1,5 +1,6 @@
 body {
-  background: url("../img/abstractbg.jpg");
+  background: #fbfbfb;
+  background: linear-gradient(90deg, #fbfbfb 0%, #ea8a91 100%);
   font-family: "Montserrat", sans-serif;
   font-size: 28px;
 }
