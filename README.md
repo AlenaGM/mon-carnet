@@ -19,7 +19,7 @@ Notes App built with Javascript: validation upon note appending, notes saving in
 
 
 <br><br> 
-\* _Week 18 Training Project in [ITGirlSchool]_ 
+\* _Week 18 Training Project in [ITGirlSchool] _ 
   
 
    [ITGirlSchool]: <https://itgirlschool.com/en>
