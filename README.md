@@ -4,7 +4,7 @@ Javascript Notes App: validation upon note appending, notes saved in Local Stora
 <br><br>
 
 ## Result
-<img width="35%" alt="screen capture" src="../main/assets/img/captureweb.jpg">
+<img width="35%" alt="screen capture" src="../main/assets/img/captureweb.jpeg">
 
 ## Demo
 [Mon-Carnet-de-Notes]
