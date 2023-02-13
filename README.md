@@ -1,4 +1,4 @@
-# Mon-Carnet-de-Notes 📔
+# Mon carnet de notes 📔
 
 Javascript Notes App: validation upon note appending, notes saved in Local Storage.
 <br><br>
