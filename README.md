@@ -1,6 +1,6 @@
 # Mon carnet de notes 📔
 
-Javascript Notes App: validation upon note appending, notes saved in Local Storage.
+Javascript Notes App with validation upon note appending. Notes saved in Local Storage.
 <br><br>
 
 ## Result
