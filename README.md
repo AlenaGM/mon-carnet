@@ -1,13 +1,13 @@
-# Mon carnet de notes 📔
+# Mon Carnet📔
 
-Javascript Notes App with validation upon note appending. Notes saved in Local Storage.
+JavaScript Notes App: Implements validation when adding new notes and saves the notes in the browser's Local Storage.
 <br><br>
 
 ## Result
 <img width="35%" alt="screen capture" src="../main/assets/img/captureweb.jpeg">
 
 ## Demo
-[Mon-Carnet-de-Notes]
+[Mon Carnet]
 
 ## Tech stack
 
@@ -23,4 +23,4 @@ Javascript Notes App with validation upon note appending. Notes saved in Local S
   
 
    [ITGirlSchool]: <https://itgirlschool.com/en>
-   [Mon-Carnet-de-Notes]: <https://alenagm.github.io/Mon-Carnet-de-Notes/>
+   [Mon Carnet]: <https://alenagm.github.io/mon-carnet/>
