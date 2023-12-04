@@ -1,6 +1,6 @@
 # Mon Carnet📔
 
-JavaScript Notes App: Implements validation when adding new notes and saves the notes in the browser's Local Storage.
+JavaScript Notes App: includes validation when adding new notes and saves the notes in the browser's Local Storage.
 <br><br>
 
 ## Result
